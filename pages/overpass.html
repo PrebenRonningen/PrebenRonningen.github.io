@@ -52,17 +52,78 @@
 						<div class="inner">
 							<h1>Overpass 2</h1>
 							<span class="image main"><img src="../images/banner/OverpassBanner.png" alt="" /></span>
-							<b><p>More informaiton will be available after the game has launched on 19th of October 2023</p></b>
-							<p>I became part of the Overpass 2 team in October 2022.
-							<br>During my time I have played a key role in getting the games from pre-beta to its final shippable state.</p>
-							<b>My main focuses has been to implement features such as:</b>
-							<li>Player progression system, Levels, experience, money.</li>
-							<li>Player skill tree.</li>
-							<li>Race Simulation and its menus.</li>
-							<li>Racing systems such as Race Objectives & race obstacle warning system.</li>
-							<li>UI implementation.</li>
-							<li>Race track data implementation.</li>
-							<li>Race start position rules.</li>
+							<p>I have been working with the Overpass 2 team sinse October 2022.
+							<br>During my time I have played a key role in getting the games from alpha to its final shippable state.</p>
+							<b>My main role was to communicate with the design department and translate their designs into fully integrated features.</b>
+							<p>My code and work spans throughout the games entire code base, I don't think there's any aspect of the games code that I did not touch in my time on this project.
+								I have been tasked with finding, understanding and refactoring legacy code, as well as taking over and finishing work that was left in a half finished state.
+								The systems and features I chose to highlight in the rest of this page are the larger and more tangible contributions from me.   
+							</p>
+							<div>
+								<b>Player Skill tree. Player progression system, Levels, experience, money.</b>
+								<div style="flex: 1; padding: 1px; text-align: left;">
+									<img src="../images/Overpass 2/SkillView.png" alt="" style="max-width: 100%; height: auto;">
+									<p>Skill tree menu: Scrollable categories(top left). Hovered skill, info, cost, available points, reset panel(right top to bottom). Skill tree pannel showing all skills(center). Spent/total points(left).<br>
+										This menu is usable with both mouse and keyboard, or a gamepad controller. Selecting skills, zooming and paning around in the center menu is posible wiht both control types.<br>
+										Player progress: The players level, level progress, and currently held credits can be seen at the top of the menu.<br>
+										I implemented the system in place for rewarding and keeping track of the player's level, acquired skillpoints, and currency.</p>
+								</div>
+							</div>
+
+							<div>
+								<b>Race Reward system and menu.</b>
+								<div style="flex: 1; padding: 1px; text-align: left;">
+									<img src="../images/Overpass 2/RewardView.png" alt="" style="max-width: 100%; height: auto;">
+									<p>Reward menu: Displays the sponsor objectives the player had for the race(top left, green if completed, red if failed).<br>
+										Race rewards pannel on the right, shows current level and progression bar. Total accumulated XP from the race. Credit rewards from sponsor. Credit reward from Race. Total accumulated Credits. New unlocked vehicle accesories. (from top to bottom respectively)</p>
+								</div>
+							</div>
+							<div>
+								<b>Race Simulation, Simulation menu.</b>
+								<div style="flex: 1; padding: 1px; text-align: left;">
+									<img src="../images/Overpass 2/SimView.png" alt="" style="max-width: 100%; height: auto;">
+									<p>Race Simulation: Simulates a race, calculated based on the opponent teams standing, the maps terrain type, correct wheels, vehicle upgrades and tier, and players skills.</p>
+								</div>
+							</div>
+							
+							<div>
+								<b>Race Simulation, Simulation menu.</b>
+								<div style="flex: 1; padding: 1px; text-align: left;">
+									<img src="../images/Overpass 2/WarningView.png" alt="" style="max-width: 100%; height: auto;">
+									<p>Warning System: Displays upcomming warning both on the minimap and on screen with distance to obstacle.</p>
+								</div>
+							</div>
+							 <b>Race Track Data:</b>
+							 <p>Implemented a collection to keep track of all neccassary data for the track to be used throughout the game, such as tack section length, track looping, track start/end, surface, obtacle locations, track section ai-information.</p>
+							<div>
+								<p>Race start position rules: <br>
+									<li>Quickrace:</li>
+									<ul> 
+									<li>Player always starts last.</li>
+									</ul>
+									<li>Career Race:</li>
+									<ul>
+										<li>If it's the first Main race, Player always starts last.</li>
+										<li>otherwise, start according to the players seasonal ranking.</li>
+										<li>In case of Side events, player always starts last.</li>
+									</ul>
+										<li>Multiplayer:</li>
+									<ul><li>Players start in random positions when it's the first race.</li>
+										<li>In any of the following races in the same lobby the players start according to their accumulated score.</li>
+									</ul>
+									<li>SplitScreen:</li>
+									<ul>
+									<li>Players start according to the player number, Player 1 starts in first place, player 2 starts in second place and so on.</li>
+								</ul>
+							</p>
+							</div>
+							<p>I've contributed much more, but on their own is quite scattered, so I won't go into detail about it here.</p>
+							<b>Showcase:</b>
+							<span class="video">
+								<video width="1280" height="720" poster="../images/thumbs/Overpass2.png" preload="metadata" controls="controls"  onloadstart="this.volume=1" style="margin: 1em 0 1em 0; width: 100%; height: auto;">
+									<source src="../images/Overpass 2/op2.mp4" type="video/mp4" alt="" >
+								</video>
+							</span>
 						</div>
 					</div>
 			</div>
