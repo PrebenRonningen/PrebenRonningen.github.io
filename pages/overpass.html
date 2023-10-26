@@ -52,29 +52,36 @@
 						<div class="inner">
 							<h1>Overpass 2</h1>
 							<span class="image main"><img src="../images/banner/OverpassBanner.png" alt="" /></span>
-							<p>I have been working with the Overpass 2 team sinse October 2022.
-							<br>During my time on the projec I have played a key role in getting the games from alpha to its final shippable state.</p>
-							<b>My main role was to communicate with the design department and translate their designs into fully integrated features.</b>
-							<p>My code and work spans throughout the games entire code base, I don't think there's any aspect of the games code that I did not touch in my time on this project.
-								I have been tasked with finding, understanding and refactoring legacy code, as well as taking over and finishing work that was left in a un-finished state.
+							<p>I have been working with the Overpass 2 team since October 2022.
+							<br>During my time on the project I have played a key role in getting the game from alpha to its final shippable state.</p>
+							<b>My main role was to communicate with the design and the art department to translate their designs and ideas into fully integrated features.</b>
+							<p>My code and work spans throughout the games entire code base. I don't think there's any aspect of the games code that I did not touch in my time on this project.
+								I have been tasked with finding, understanding and refactoring legacy code, 
+								taking over and finishing work that was left in a un-finished state, as well as implementing features from scratch.
 								The systems and features I chose to highlight in the rest of this page are the larger and more tangible contributions from me.   
 							</p>
 
-							<p><b>Shader and Material fixes and optimizations:</b><br>
-							I worked closely at times with the art department to optimize the material made by them in Unreal node editor, 
-							this also includes fixing the materials when nobody knows why it doesn't do what it's supposed to do.<br>
-							As an example: We had a strange penomena with the vehicles ghost shader, the material used when the vehicle can not be collided with or has just respawned. 
+							<p><b>Shader and material fixes and optimizations:</b><br>
+							I worked closely with the art department to optimize the material made by them in Unreals material node editor, 
+							this also includes fixing the materials when nobody knew how or why it didn't do what it was supposed to be doing.<br>
+							As an example: We had a strange phenomena with the vehicles ghost shader, 
+							the "ghost shader" is the material used when the vehicle can not be collided with or has just respawned. 
 							The vehicle had large noticable artefacts, dark streaks or spots whenever it was near the camera. 
-							This turned out the be caused by a "magic number" a '2' set as a magic cutoff point for the depthbuffer in a custom depth stencile, 
-							quickly resolved by making it into a modifiable parameter and set it to a more reasonable value removing the artefacting.  
+							I took my time to look through and understand how the material currently worked and got an idea of how it was supposed to be working.<br>
+							The issue turned out the be caused by a "magic number" a '2' set as a magic cutoff point for the depthbuffer in the custom depth stencile.
+							I quickly found and resolved this issue by making it into a modifiable parameter and set it to a more reasonable value removing the artefacting.  
 							</p>
 
-							<p><b>Platforms:</b><br>
-								I on fixing issues occuring on PS5 exclusively, and others that occured on Xbox exclusivelu. Debugging and fixing platform spesific issues that occured during development using the respective platform tools. 
+							<p><b>Platform development:</b><br>
+								I worked on fixing issues that occured on PS5, and others that occured on Xbox. 
+								I debugged and fixed platform spesific issues that occured during development using the respective platform debugging tools. 
 								</p>
 
 								<p><b>Multiplayer:</b><br>
-									Worked on both splitscreen and multiplayer parts of the game. In regards to Splitscreen I solved a lot of bugs occuring with Unreals multi-world solution, and edgecases where each player need to see their own mesh in one way, but display a nother to the other player. Fixed and synched issues occuring in these situation, some examples would be shadows being drawn incorrectly on each screen, or characters playing the wrong animation on one screen but correct on the other.<br>
+									I worked on both the splitscreen and the multiplayer parts of the game. 
+									In regards to splitscreen I solved a lot of bugs occuring with Unreals multi-world solution, and edgecases where each player need to see their own mesh in one way, 
+									but displayed in another way to the other player. Fixed and synched issues occuring in these situations, 
+									some examples would be shadows being drawn incorrectly on each screen, or characters playing the wrong animation on one screen but correct on the other.<br>
 									For online multiplayer I helped integrate our scoring systems, start position placements, camera movement and synching ragdolling.
 								</p>							
 
@@ -90,18 +97,26 @@
 								</div>
 							</div>
 							<p><b>Skill tree menu:</b><br> Scrollable categories(top left). Hovered skill information panel including cost, available points skillpoints and level progression panel, 
-								skill tree reset panel(right top to bottom). In the center of the menu there is a skill tree pannel showing all skills the player can unlock. 
-								There is also on the left hand side a panel showing the players currently available points as well as how many points the player has already spent.<br>
-								The menu is usable with both mouse and keyboard, or a gamepad controller. Selecting skills, zooming and paning around in the center menu is posible wiht both control types.<br>
-								<b>Player progress:</b><br> I implemented the interface for the players level and level progress system, this also includes the players currently held credits. There's a visual overview of this in multiple menus, one of the places it can be see is at the top of the skill menu. It can also be seen in the Post-race rewards screen.<br>
-								I implemented the system in place for rewarding and keeping track of the player's level, acquired skillpoints, and currency.</p>
+								skill tree reset panel(right, top to bottom). In the center of the menu there is a skill tree pannel showing all skills the player can or already have unlock. 
+								There is also on the left hand side a panel showing the players currently available points as well as how many points the player have already spent.<br>
+								The menu is usable with both mouse and keyboard, or a gamepad controller. Selecting skills, zooming and paning around in the center menu is possible with both control types.<br>
+								<b>Player progress:</b><br> I implemented the interface for the players level and level progress system, this also includes the players currently held credits.
+								 There's a visual overview of this in multiple menus, one of the places it can be see is at the top of the skill menu. 
+								 It can also be seen in the Post-race rewards screen, as well as in many other menus.<br>
+								I implemented the system in place for rewarding and keeping track of the players level, acquired skillpoints, and currency.</p>
 						
 								<p><b>Race Simulation Screen:</b><br> 
-									Here you can send the AI out to drive the race for you, you still have to set up the vehicle that will be used. How well the AI does in the simulation is based on multiple factors: 
-									The oponent teams difficulty is taken into account, the oponents vehicle setup, the maps terrain type, and if you have the correct tires for the map, the vehicles upgrades are also taken into account, the vehicles damage state, and finally the players skills.<br>
-									With a lot of factors taken into account we simulate how the racers perform one track section at a time, this is a decision I made to allow the Design department the option to add events to ocure in the simulated race, such as collision highlights or finishline callouts. However this never made it into the game.<br>
-									After every section is completed I took all the information and stitch it together with a time stamp for section split time, we know in what position a racer pases any given point in and at what time. Finally we just have to play the simulation.<br>
-									Everything is calculated and set up when the player presses the "Start" button at the bottom of the simulation screen, then we simply sit back and watch how well each driver did.
+									Here you can send the AI out to drive the race for you, you still have to set up the vehicle that will be used for the race. 
+									How well the AI does in the simulation is based on multiple factors: 
+									The opponent teams difficulty, the opponents vehicle setup, the maps terrain types, 
+									if you have the correct tires for the maps terrain, the vehicle upgrades, the vehicles damage state, and finally the players skills are taken into account.<br>
+									With a lot of factors taken into account we simulate how the racers perform one track section at a time. 
+									This is a decision I made to allow the Design department the option to add events to ocure in the simulated race, 
+									such as collision highlights or finishline callouts. However this never made it into the game.<br>
+									After every section is completed I took all the information and stitch it together with a time stamp for each section split time, 
+									we know in what position a racer pases any given point in and at what time. Finally we just have to play the simulation.<br>
+									Everything is calculated and set up when the player presses the "Start" button at the bottom of the simulation screen, 
+									then we simply sit back and watch how well each driver did.
 								 </p>
 
 
@@ -116,7 +131,7 @@
 								</div>
 							</div>
 							<p><b>Post-race reward menu:</b><br> This menu displays the sponsor objectives the player had for the race(top left, green if completed, red if failed).<br>
-								Race rewards pannel on the right, shows current level and progression bar, these change as the rewards are tallied up.<br> 
+								The race reward pannel on the right shows current level and progression bar, these change as the rewards are tallied up.<br> 
 								The menu displays from top to bottom: 
 								<li>The total accumulated XP from the race.</li> 
 								<li>Credit rewards from sponsor.</li> 
@@ -131,8 +146,19 @@
 
 							<p><b>Other game elements:</b></p>
 
+							<b>Side events:</b>
+							<p>I took over the skeleton code set up for side events and brought it to a fully integrated part of the game.
+								<li>The side events are:</li>
+								<ul><li><b>Show-off event:</b> Here the player get to compete to unlock accessories for their vehicles.</li>
+								<li><b>Product demonstration:</b> Here the player is given a vehicle they do not already own, here they get to test drive the vehicle in a full race.</li>
+								<li><b>Extreme challenge:</b> In this event the player is given a completely broken vehicle and have to complete a race against time.</li>
+								<li><b>Training Day:</b> This is a traditional time-attack event where the player is presented with a time to beat, the player must beat the set lap-time to win the event. 
+								If the player does not beat the time they get to keep racing as many laps they need to beat it. </li></ul>
+							</p>
+
 							<b>Tutorial:</b>
-							<p>I worked a lot on the tutorial both playtesting, and whenever I found an issue I promptly fixed it. This ranges from hard-locks wheere the player input is no longer read, to smaller issues such as the wrong dialog being player, to the game crashing at psudo-random times.	
+							<p>I worked a lot on the tutorial both implementation and playtesting, whenever I found an issue I promptly fixed it.
+								 This ranged from hard-locks where the player's input were no longer read, to smaller issues such as the wrong dialog being played, to the game crashing at psudo-random times.	
 							</p>
 
 							<b>Game intro sequence:</b>
@@ -140,10 +166,11 @@
 							</p>
 							
 							<b>Race Track Data:</b>
-							 <p>Implemented a collection to keep track of all neccassary data for the track to be used throughout the game, such as tack section length, track looping, track start/end, surface, obtacle locations, track section ai-information.</p>
+							 <p>Implemented a collection to keep track of all neccassary data for the track to be used throughout the games code base, 
+								such as track section length, track shape, track start/end, surface-terrain, obstacle locations and types, track section ai-information.</p>
 							
 							 <div>
-								<p><b>Race start position rules:</b> <br>
+								<p><b>Race start positioning rules:</b> <br>
 									<li>Quickrace:</li>
 									<ul> 
 									<li>Player always starts last.</li>
@@ -151,7 +178,7 @@
 									<li>Career Race:</li>
 									<ul>
 										<li>If it's the first Main race, Player always starts last.</li>
-										<li>otherwise, start according to the players seasonal ranking.</li>
+										<li>Otherwise, start according to the players seasonal ranking.</li>
 										<li>In case of Side events, player always starts last.</li>
 									</ul>
 										<li>Multiplayer:</li>
@@ -164,11 +191,11 @@
 								</ul>
 							</p>
 							<b>QA:</b>
-							<p>Lastly I'll mention my role in quality assurance(QA) ensuring that the game is playtested enough where I aparently have a unique tallent of finding and reproducing obscure bugs.
-								I didn't only playtest and report these issues, the larger part of my work was fixing these issues as they were found and reported wither by myself or other collegues. 
+							<p>Lastly I'll mention my role in quality assurance(QA) ensuring that the game is playtested enough where I apparently have a unique talent of finding and reproducing obscure bugs.
+								I didn't only playtest and report these issues, the larger part of my work was fixing these issues as they were found and reported either by myself or other collegues. 
 							</p>
 							</div>
-							<p>I've contributed much more, but they may apare quite scattered or small on their own, so I won't go into detail about it here.</p>
+							<p>I've contributed much more, but they may appear quite scattered or small on their own, so I won't go into detail about it here.</p>
 							<b>Showcase:</b>
 							<span class="video">
 								<video width="1280" height="720" poster="../images/thumbs/Overpass2.png" preload="metadata" controls="controls"  onloadstart="this.volume=1" style="margin: 1em 0 1em 0; width: 100%; height: auto;">
